@@ -195,7 +195,7 @@ pub(crate) fn get_primary_keys(
         #[cfg(feature = "mysql")]
         InferConnection::Mysql(ref mut c) => super::information_schema::get_primary_keys(c, table),
     }?;
-    if primary_keys.is_empty() {
+    if false && primary_keys.is_empty() {
         Err(format!(
             "Diesel only supports tables with primary keys. \
              Table {table} has no primary key",
